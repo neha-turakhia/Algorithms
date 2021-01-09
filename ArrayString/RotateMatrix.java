@@ -16,10 +16,10 @@ public class RotateMatrix {
 
         System.out.println("Matrix Rotation Clockwise");
         rotateMatrixClockwise();
-        printMatrix();
+        PrintUtil.printMatrix(mat);
         System.out.println("Matrix Rotation Anti-Clockwise");
         rotateMatrixAntiClockwise();
-        printMatrix();
+        PrintUtil.printMatrix(mat);
     }
 
     private static void rotateMatrixClockwise() {
@@ -38,7 +38,7 @@ public class RotateMatrix {
         *       16 12 8 4
         * */
         transpose();
-        printMatrix();
+        PrintUtil.printMatrix(mat);
         //swap columns
         for(int i=0;i<mat.length;++i) {
             for (int j = 0; j <mat.length/2; ++j) {
@@ -48,7 +48,7 @@ public class RotateMatrix {
                 mat[i][swapCol]=temp;
             }
         }
-        printMatrix();
+        PrintUtil.printMatrix(mat);
         for(int i=0;i<mat.length;++i) {
             for (int j = 0; j <mat.length/2; ++j) {
                 int swapCol = mat.length-j-1;
@@ -75,7 +75,7 @@ public class RotateMatrix {
         *       1 5 9 13
         * */
         transpose();
-        printMatrix();
+        PrintUtil.printMatrix(mat);
         //swap rows
         for(int i=0;i<mat.length/2;++i) {
             for (int j = 0; j < mat.length; ++j) {
@@ -85,7 +85,7 @@ public class RotateMatrix {
                 mat[swapRow][j]=temp;
             }
         }
-        printMatrix();
+        PrintUtil.printMatrix(mat);
         for(int i=0;i<mat.length/2;++i) {
             for (int j = 0; j < mat.length; ++j) {
                 int swapRow = mat.length-i-1;
@@ -105,16 +105,5 @@ public class RotateMatrix {
                 mat[j][i]= temp;
             }
         }
-    }
-
-    private static void printMatrix() {
-        System.out.println("----------------------------");
-        for(int i=0;i<mat.length;++i) {
-            for (int j = 0; j < mat.length; ++j) {
-                System.out.print(mat[i][j]+"  ");
-            }
-            System.out.println();
-        }
-        System.out.println("----------------------------");
     }
 }
