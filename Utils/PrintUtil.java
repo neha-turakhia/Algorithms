@@ -1,4 +1,4 @@
-package ArrayString;
+package Utils;
 
 public class PrintUtil {
     public static void printMatrix(int[][] mat) {
