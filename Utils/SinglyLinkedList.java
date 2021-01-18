@@ -96,5 +96,15 @@ public class SinglyLinkedList {
         return index;
     }
 
+    public void deleteNextNode(LinkedNode node) {
+        if(node != null){
+            LinkedNode delNode = node.getNext();
+            if(delNode != null){
+                node.setNext(delNode.getNext());
+                delNode.setNext(null);
+            }
+         }
+    }
+
 }
 

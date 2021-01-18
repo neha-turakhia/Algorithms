@@ -29,16 +29,16 @@ public class RemoveDups {
          * Time Complexity - O(n)
          * Space Complexity ~ O(n) for the hash set
          * **/
-        /*HashSet hm = new HashSet();
-        LinkedNode current = linkedList.getHead().getNext();
-        while(current != null) {
-            int value = current.getData();
+       /* HashSet hm = new HashSet();
+        LinkedNode current = linkedList.getHead();
+        while(current != null && current.getNext() != null) {
+            int value = current.getNext().getData();
             if(hm.contains(value)) {
-                linkedList.deleteAtIndex(linkedList.getIndex(current));
+                linkedList.deleteNextNode(current);
             }
             hm.add(value);
             current = current.getNext();
-        }*/
+        } */
 
 
         /**Solution 2 : Without using a temporary buffer **/
@@ -49,10 +49,10 @@ public class RemoveDups {
         LinkedNode current = linkedList.getHead().getNext();
 
         while(current != null) {
-            LinkedNode fastPtr = current.getNext();
-            while (fastPtr != null) {
-                if(fastPtr.getData() == current.getData()) {
-                    linkedList.deleteAtIndex(linkedList.getIndex(fastPtr));
+            LinkedNode fastPtr = current;
+            while (fastPtr != null && fastPtr.getNext() != null) {
+                if(fastPtr.getNext().getData() == current.getData()) {
+                    linkedList.deleteNextNode(fastPtr);
                 }
                 fastPtr = fastPtr.getNext();
             }
