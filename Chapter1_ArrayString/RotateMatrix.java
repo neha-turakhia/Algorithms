@@ -1,4 +1,6 @@
-package ArrayString;
+package Chapter1_ArrayString;
+
+import Utils.PrintUtil;
 
 import java.util.Scanner;
 

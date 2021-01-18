@@ -1,4 +1,4 @@
-package ArrayString;
+package Chapter1_ArrayString;
 
 import java.io.InvalidObjectException;
 import java.util.Scanner;

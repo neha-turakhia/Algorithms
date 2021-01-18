@@ -1,6 +1,5 @@
-package ArrayString;
+package Chapter1_ArrayString;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class CheckPermutation {

@@ -1,7 +1,5 @@
-package ArrayString;
+package Chapter1_ArrayString;
 
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class IsUnique {
