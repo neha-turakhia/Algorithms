@@ -1,5 +1,6 @@
 package Utils;
 
+
 public class PrintUtil {
     public static void printMatrix(int[][] mat) {
         System.out.println("----------------------------");
@@ -10,5 +11,15 @@ public class PrintUtil {
             System.out.println();
         }
         System.out.println("----------------------------");
+    }
+
+    public static void printLinkedList(SinglyLinkedList list){
+        System.out.println("----------------------------");
+        LinkedNode current = list.getHead().getNext();
+        while(current != null) {
+            System.out.print(current.getData()+"-->");
+            current = current.getNext();
+        }
+        System.out.println("NULL\n----------------------------");
     }
 }

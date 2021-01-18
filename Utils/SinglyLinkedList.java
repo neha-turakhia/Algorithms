@@ -16,7 +16,11 @@ public class SinglyLinkedList {
        length++;
     }
 
-    public void insetAtIndex(int index,LinkedNode node){
+    public LinkedNode getHead() {
+        return head;
+    }
+
+    public void insetAtIndex(int index, LinkedNode node){
         if(index > length) index = length;
         LinkedNode current = head;
         for(int k=0;k < index && k < length;++k) {
@@ -75,6 +79,21 @@ public class SinglyLinkedList {
 
     public LinkedNode deleteAtEnd() {
         return deleteAtIndex(length-1);
+    }
+
+    public int getIndex(LinkedNode node) {
+        int index = -1;
+        LinkedNode current = head.getNext();
+        int k =0;
+        while (current != null){
+            if(current.equals(node)) {
+                index = k;
+                break;
+            }
+            k++;
+            current = current.getNext();
+        }
+        return index;
     }
 
 }
