@@ -106,5 +106,16 @@ public class SinglyLinkedList {
          }
     }
 
+    public SinglyLinkedList insertAllAtEnd(SinglyLinkedList l1, LinkedNode head){
+        LinkedNode current = head;
+
+        while(current != null) {
+            LinkedNode newNode = new LinkedNode(current.getData());
+            l1.insertEnd(newNode);
+            current = current.getNext();
+        }
+        return l1;
+    }
+
 }
 
