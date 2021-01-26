@@ -23,6 +23,23 @@ public class Partition {
     }
 
     private static SinglyLinkedList partition(SinglyLinkedList linkedList, int partitionValue) {
+
+        /*
+        * Instead of creating 2 deep copies of all the nodes in the linked list , the code can be enhanced as follows :
+            1. create 2 lists - left, right which will maintain shallow copy of the nodes.
+            * Left will have all the nodes lesser than the partition value and right will have
+            * all the nodes greater than or equal to the partition value.
+            2. Point 1 is the ACTUAL SOLUTION OF THE PROBLEM. We create a deep copy of the list only to print
+            * the result and is NOT NECESSARY TO FOLLOW as a part of the problem.
+
+
+            Time Complexity : O(N) ~ loop through all the nodes of the actual list ,
+            * we are not going to say it is O(2n) since deep copy of the final list is created only for printing the output and
+            *  is NOT a part of the actual problem.
+
+            Space Complexity : O(1) since we have 4 pointers that leftHead, left, rightHead and right.
+            * We do not consider `newList` since it is created for printing the output and is NOT A PART OF THE ACTUAL SOLUTION.
+        * */
         LinkedNode head = linkedList.getHead();
         if(head == null) return linkedList;
         if(head.getNext() == null) return linkedList;
@@ -36,18 +53,18 @@ public class Partition {
             // if(current.next == originalTail) break;
             if(current.getData() >= partitionValue) {
                 if(right == null) {
-                    right = new LinkedNode(current.getData());
+                    right = current;
                     rightHead = right;
                 }else{
-                    right.setNext(new LinkedNode(current.getData()));
+                    right.setNext(current);
                     right = right.getNext();
                 }
             }else {
                 if(left == null) {
-                    left = new LinkedNode(current.getData());
+                    left = current;
                     leftHead = left;
                 }else {
-                    left.setNext(new LinkedNode(current.getData()));
+                    left.setNext(current);
                     left = left.getNext();
                 }
             }
@@ -55,8 +72,8 @@ public class Partition {
         }
 
         if(leftHead != null) {
+            left.setNext(rightHead);
             newList.insertAllAtEnd(newList,leftHead);
-            newList.insertAllAtEnd(newList,rightHead);
         }else {
             newList.insertAllAtEnd(newList,rightHead);
         }
