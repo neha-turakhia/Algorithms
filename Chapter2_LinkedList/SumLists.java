@@ -103,6 +103,12 @@ public class SumLists {
         list2.reverseList();
 
         SinglyLinkedList sumList = linkedListSum(list1,list2,FORWARD_ORDER);
+
+
+        /**
+         * Solution 2 : add the elements in the order and then correct the input from reverse
+         * **/
+        //TODO : Implement Solution2
         return sumList;
     }
 }
