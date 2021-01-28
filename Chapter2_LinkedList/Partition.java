@@ -71,11 +71,13 @@ public class Partition {
             current = current.getNext();
         }
 
+        right.setNext(null);
+
         if(leftHead != null) {
             left.setNext(rightHead);
-            newList.insertAllAtEnd(newList,leftHead);
+            newList.insertAllAtEnd(leftHead);
         }else {
-            newList.insertAllAtEnd(newList,rightHead);
+            newList.insertAllAtEnd(rightHead);
         }
 
         return newList;
