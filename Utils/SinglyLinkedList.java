@@ -117,5 +117,22 @@ public class SinglyLinkedList {
         return this;
     }
 
+    public void reverseList() {
+        LinkedNode current = this.getHead().getNext();
+        LinkedNode revList = null;
+
+        while(current != null) {
+            LinkedNode temp = current.getNext();
+            current.setNext(revList);
+            revList = current;
+            current = temp;
+        }
+
+        this.length = 0;
+        this.head = new LinkedNode();
+        insertAllAtEnd(revList);
+
+    }
+
 }
 
