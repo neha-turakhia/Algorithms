@@ -25,6 +25,43 @@ public class Palindrome {
         int length = list.getLength();
         boolean isPalindrome = true;
         //TODO : Implement Solution
+        LinkedNode cur = list.getHead().getNext();
+        for(int k=0;k<length/2;++k){
+            cur = cur.getNext();
+        }
+
+        boolean evenLength = (length%2 == 0) ? true:false;
+        LinkedNode revList = null;
+        if(evenLength) {
+            revList = reverse(cur);
+        }else {
+            revList = reverse(cur.getNext());
+        }
+
+        LinkedNode listHead = list.getHead().getNext();
+        while(listHead != null && revList != null) {
+            int listData = listHead.getData();
+            int revListData = revList.getData();
+            if(listData != revListData) {
+                isPalindrome = false;
+                break;
+            }
+            listHead = listHead.getNext();
+            revList = revList.getNext();
+        }
         return isPalindrome;
+    }
+
+    private static LinkedNode reverse(LinkedNode head){
+        LinkedNode current = head;
+        LinkedNode revList = null;
+
+        while(current != null) {
+            LinkedNode temp = current.getNext();
+            current.setNext(revList);
+            revList = current;
+            current = temp;
+        }
+        return revList;
     }
 }
