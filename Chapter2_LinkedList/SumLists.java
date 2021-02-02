@@ -99,16 +99,58 @@ public class SumLists {
         /**
          * Solution 1: reverse the lists and then add each digit and insert in the beginning of the final list
          * **/
-        list1.reverseList();
+       /* list1.reverseList();
         list2.reverseList();
 
         SinglyLinkedList sumList = linkedListSum(list1,list2,FORWARD_ORDER);
-
+        return sumList;*/
 
         /**
          * Solution 2 : add the elements in the order and then correct the input from reverse
          * **/
         //TODO : Implement Solution2
-        return sumList;
+        int list1_len = list1.getLength();
+        int list2_len = list2.getLength();
+        if(list1_len != list2_len) {
+            if(list1_len > list2_len) {
+                addPaddingZeros(list2,list1_len-list2_len);
+            }else{
+                addPaddingZeros(list1,list2_len-list1_len);
+            }
+        }
+
+        SinglyLinkedList intermediateList = new SinglyLinkedList();
+        LinkedNode cur1 = list1.getHead().getNext();
+        LinkedNode cur2 = list2.getHead().getNext();
+
+        while(cur1 != null && cur2 != null){
+            int sum = cur1.getData() + cur2.getData();
+            intermediateList.insertEnd(new LinkedNode(sum));
+            cur1 = cur1.getNext();
+            cur2 = cur2.getNext();
+        }
+
+        intermediateList.reverseList();
+        int carry = 0;
+        LinkedNode current = intermediateList.getHead().getNext();
+        while(current != null) {
+            int data = current.getData()+carry;
+            int newVal = (data%10);
+            current.setData(newVal);
+            carry = data/10;
+            current = current.getNext();
+        }
+        if(carry != 0) {
+            intermediateList.insertEnd(new LinkedNode(carry));
+        }
+        intermediateList.reverseList();
+        return intermediateList;
+
+    }
+
+    private static void addPaddingZeros(SinglyLinkedList list, int count){
+        for(int i=0;i<count;++i){
+            list.insertBeginning(new LinkedNode(0));
+        }
     }
 }
