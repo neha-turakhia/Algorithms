@@ -5,6 +5,7 @@ import Utils.PrintUtil;
 import Utils.SinglyLinkedList;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Palindrome {
     /**
@@ -26,10 +27,10 @@ public class Palindrome {
     }
 
     private static boolean isLinkedListPalindrome(SinglyLinkedList list){
-        int length = list.getLength();
+        int length = list.getLength(); //this operation usually takes O(n) since we would need to manually calculate the length
         boolean isPalindrome = true;
-        //TODO : Implement Solution
-        LinkedNode cur = list.getHead().getNext();
+
+        /*LinkedNode cur = list.getHead().getNext();
         for(int k=0;k<length/2;++k){
             cur = cur.getNext();
         }
@@ -52,7 +53,52 @@ public class Palindrome {
             }
             listHead = listHead.getNext();
             revList = revList.getNext();
+        } */
+
+
+        /*Solution 2 : using stacks without length known */
+        LinkedNode cur = list.getHead(); //first node of the list
+        LinkedNode fast = cur;
+        while(fast != null && fast.getNext() != null) {
+            fast = fast.getNext().getNext();
+            cur = cur.getNext();
         }
+
+        boolean isOddLength = (fast == null) ? true : false;
+
+
+        //Add elements into the stack from cur.next & preserve cur value
+        LinkedNode stackStart = cur.getNext();
+        Stack<Integer> stack = new Stack<>();
+        while(stackStart != null) {
+            stack.push(stackStart.getData());
+            stackStart = stackStart.getNext();
+        }
+
+        if(isOddLength) {
+            LinkedNode ptr = list.getHead().getNext();
+            while(ptr != cur && !stack.empty()) {
+                int data = ptr.getData();
+                int stackTop = stack.pop();
+                if(data != stackTop) {
+                    isPalindrome = false;
+                    break;
+                }
+               ptr = ptr.getNext();
+            }
+        }else {
+            LinkedNode ptr = list.getHead().getNext();
+            while(ptr != cur.getNext() && !stack.empty()) {
+                int data = ptr.getData();
+                int stackTop = stack.pop();
+                if(data != stackTop) {
+                    isPalindrome = false;
+                    break;
+                }
+                ptr = ptr.getNext();
+            }
+        }
+
         return isPalindrome;
     }
 
