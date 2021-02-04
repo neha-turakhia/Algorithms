@@ -6,6 +6,11 @@ import Utils.SinglyLinkedList;
 
 import java.util.Scanner;
 
+/**
+ * CTCI 2.3 Delete middle node: Implement an algorithm to delete a node in the middle of a singly linked list.
+            (i.e any node but the first and last node), given only access to that node.
+ **/
+
 public class DeleteMiddleNode {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);

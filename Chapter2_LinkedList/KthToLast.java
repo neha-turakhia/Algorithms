@@ -6,6 +6,10 @@ import Utils.SinglyLinkedList;
 
 import java.util.Scanner;
 
+/**
+ * CTCI 2.2 Return kth to last : Implement an algorithm to find the kth to last element of a singly linked list.
+ **/
+
 public class KthToLast {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

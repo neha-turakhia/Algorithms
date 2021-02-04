@@ -6,6 +6,15 @@ import Utils.SinglyLinkedList;
 
 import java.util.Scanner;
 
+/**
+ * CTCI 2.5 Sum Lists : You have two numbers represented by linked list, where each node contains a single digit.
+ *                      Digits are stored in reverse order.(1's digit is at the head)
+ *                      Write a function that adds two such numbers and returns a number in similar list format.
+ *                      Example : 7-->1-->6 + 5-->9-->2 = 2-->1-->9 which is (617 + 295  = 912)
+ *
+ *  FOLLOW UP :  What if digits are not stored in reverse order(i.e 1's digit is at tail)
+ *  Example :  (6--1-->7) + (2-->9-->5) = (9-->1-->2)
+ **/
 public class SumLists {
     private static final int REVERSE_ORDER = 1;
     private static final int FORWARD_ORDER = 2;

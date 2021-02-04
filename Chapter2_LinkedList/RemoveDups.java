@@ -7,6 +7,10 @@ import Utils.SinglyLinkedList;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * CTCI 2.1 Remove Dups : Write code to remove duplicates from an unsorted linked list.
+ * FOLLOW UP How would you solve this problem if a temporary buffer is not allowed?
+ * */
 public class RemoveDups {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

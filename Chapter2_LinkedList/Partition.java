@@ -7,6 +7,18 @@ import Utils.SinglyLinkedList;
 import java.util.Scanner;
 
 public class Partition {
+
+    /**
+     * CTCI 2.4 Partition: Write code to partition linked list around a value x,
+     *                     such that nodes less than x come before all the nodes greater than or equal to x.
+     *                   If x is in the list, the values of x only need to be after the elements less than x.
+     *                   The paritition element x can appear anywhere in the "right" partition,
+     *                   it does not have to appear between the left and right partitions.
+     *  Example
+     * Input :  3-->5-->8-->5-->10-->2-->1 (x = 5)
+     * Output : 3-->1-->2-->10-->5-->5-->8
+     **/
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int length = scanner.nextInt();
