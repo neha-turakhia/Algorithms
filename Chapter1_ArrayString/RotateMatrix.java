@@ -5,6 +5,15 @@ import Utils.PrintUtil;
 import java.util.Scanner;
 
 public class RotateMatrix {
+
+    /**
+     * CTCI 1.7 Rotate Image : Given an image represented by an NxN matrix,
+     *                         where each pixel in the image is 4 bytes,
+     *                         write a method to rotate the image by 90 degrees. Can you do this in place?
+     *  Added Followup : Do both clockwise & anit-clockwise rotation
+     * **/
+
+
     static int[][] mat;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

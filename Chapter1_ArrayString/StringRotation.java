@@ -3,6 +3,12 @@ package Chapter1_ArrayString;
 import java.util.Scanner;
 
 public class StringRotation {
+
+    /**
+     * CTCI 1.9 - String rotation: Assume you have a method isSubstring which checks if one word is a substring of another.
+     *                              Given two strings, write the code to check if one string is a rotation of the other using only one call to isSubstring
+     *  Example : waterbottle is a rotation of erbottlewat
+     **/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s1 = scanner.nextLine();

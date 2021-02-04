@@ -3,6 +3,20 @@ package Chapter1_ArrayString;
 import java.util.Scanner;
 
 public class OneAway {
+
+    /**
+     * CTCI 1.5 One Away: There are three types of edits that can be performed on strings:
+     *                    insert a character remove a character, or replace a character.
+     *                    Given two strings, write a function to check if they are one edit (or zero edits) away.
+     *
+     *  EXAMPLE :-
+     *  pale, ple -> true
+     *  pales, pale -> true
+     *  pale, bale -> true
+     *  pale, bake -> false
+     **/
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s1 = scanner.nextLine();

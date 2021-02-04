@@ -3,6 +3,17 @@ package Chapter1_ArrayString;
 import java.util.Scanner;
 
 public class StringCompression {
+
+    /**
+     * CTCI 1.6 String Compression : Implement a method to perform basic string compression using the counts of repeated characters.
+     *                              For example, the string aabcccccaaa would become a2blc5a3.
+     *                              If the "compressed" string would not become smaller than the original string,
+     *                              your method should return the original string.
+     *                              You can assume the string has only uppercase and lowercase letters (a - z).
+     *
+     *  Example : Input = aabcccccaaa, Output = a2blc5a3
+     **/
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();

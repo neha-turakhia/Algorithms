@@ -3,6 +3,10 @@ package Chapter1_ArrayString;
 import java.util.Scanner;
 
 public class IsUnique {
+    /**
+     * CTCI 1.1 IsUnique : Implement an algorithm to determine if a string has all unique characters.
+     *                     What if you cannot use additional data structures?
+     * **/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
