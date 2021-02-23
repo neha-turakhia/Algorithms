@@ -117,6 +117,18 @@ public class SinglyLinkedList {
         return this;
     }
 
+    public SinglyLinkedList insertAllAtEndWithSameRef(LinkedNode head){
+        LinkedNode current = head;
+        LinkedNode tail = this.getNodeAtIndex(this.length-1);
+        while(current != null) {
+            tail.setNext(current);
+            this.length ++;
+            current = current.getNext();
+            tail = tail.getNext();
+        }
+        return this;
+    }
+
     public void reverseList() {
         LinkedNode current = this.getHead().getNext();
         LinkedNode revList = null;
