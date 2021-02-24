@@ -60,7 +60,7 @@ public class Intersection {
 
         /**Solution 1**/
         //Check if the tail of both the lists is the same
-        LinkedNode tail1 = list1.getHead().getNext();
+        /*LinkedNode tail1 = list1.getHead().getNext();
         while(tail1.getNext() != null){
             tail1 = tail1.getNext();
         }
@@ -102,6 +102,17 @@ public class Intersection {
         while(cur1 != cur2){
             cur1 = cur1.getNext();
             cur2 = cur2.getNext();
+        }
+
+        intersectingNode = cur1;*/
+
+        /**Solution 2**/
+        LinkedNode cur1 = list1.getHead().getNext();
+        LinkedNode cur2 = list2.getHead().getNext();
+
+        while(cur1 != cur2) {
+            cur1 = (cur1 != null) ? cur1.getNext() : list2.getHead().getNext();
+            cur2 = (cur2 != null) ? cur2.getNext() : list1.getHead().getNext();
         }
 
         intersectingNode = cur1;
