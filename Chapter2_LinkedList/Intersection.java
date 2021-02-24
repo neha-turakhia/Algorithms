@@ -58,6 +58,7 @@ public class Intersection {
     private static LinkedNode getIntersectionOf2Lists(SinglyLinkedList list1, SinglyLinkedList list2){
         LinkedNode intersectingNode = null;
 
+        /**Solution 1**/
         //Check if the tail of both the lists is the same
         LinkedNode tail1 = list1.getHead().getNext();
         while(tail1.getNext() != null){
