@@ -33,24 +33,44 @@ public class LoopDetection {
         System.out.println("Enter the position where the list loops");
         int pos = scanner.nextInt();
 
-        LinkedNode node = list.getNodeAtIndex(pos);
-        LinkedNode cur = list.getHead().getNext();
-        while(cur != null && cur.getNext() != null) {
-            cur = cur.getNext();
-        }
+        if(pos > 0 && pos < list.getLength()) {
+            LinkedNode node = list.getNodeAtIndex(pos);
+            LinkedNode cur = list.getHead().getNext();
+            while(cur != null && cur.getNext() != null) {
+                cur = cur.getNext();
+            }
 
-        cur.setNext(node);
+            cur.setNext(node);
+        }
 
         LinkedNode loopHead = detectLoopHead(list);
         if(loopHead == null) {
             System.out.println("No loop found !!");
         }else {
-            System.out.println("Loop head  :: "+loopHead.getData());
+            int index = list.getIndex(loopHead);
+            System.out.println("Loop head "+loopHead.getData()+" found at pos "+index);
         }
     }
 
     private static  LinkedNode detectLoopHead(SinglyLinkedList list) {
-        //TODO implement method
-        return null;
+        LinkedNode head = list.getHead().getNext(); //first node in the list , NOT the dummy head
+        LinkedNode slow = head;
+        LinkedNode fast = head;
+
+        while(fast != null && fast.getNext() != null) {
+            fast = fast.getNext().getNext();
+            slow = slow.getNext();
+
+            if(fast == slow) break;
+        }
+
+        if(fast == null || fast.getNext() == null) return  null;
+        fast = head;
+
+        while(fast != slow) {
+            fast = fast.getNext();
+            slow = slow.getNext();
+        }
+        return fast;
     }
 }
