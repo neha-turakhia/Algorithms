@@ -10,6 +10,14 @@ import java.util.Stack;
 public class Palindrome {
     /**
      * CTCI 2.6 Palindrome : Implement a function to check if a linked list is a palindrome.
+     *
+     * Solution 1: Reverse the 2nd half of the list and compare the nodes from the middle.
+     * Time Complexity : O(N/2+N/2+N/2) ~ O(3N/2) ~ O(N)
+     * Space Complexity : O(1)
+     *
+     * Solution 2: Using stacks - push the 2nd half of the list into a stack and compare the values while popping them out.
+     * Time Complexity : O(N/2+N/2+N/2) ~O(3N/2) ~ O(N)
+     * Space Complexity : O(N/2) ~ O(N) for the stack
      **/
 
     public static void main(String[] args) {
