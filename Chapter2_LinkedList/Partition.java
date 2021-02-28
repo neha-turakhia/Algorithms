@@ -17,6 +17,20 @@ public class Partition {
      *  Example
      * Input :  3-->5-->8-->5-->10-->2-->1 (x = 5)
      * Output : 3-->1-->2-->10-->5-->5-->8
+     *
+     * Solution :  Instead of creating 2 deep copies of all the nodes in the linked list , the code can be enhanced as follows :
+     *             1. create 2 lists - left, right which will maintain shallow copy of the nodes.
+     *                Left will have all the nodes lesser than the partition value and right will have all the nodes
+     *                greater than or equal to the partition value.
+     *             2. Point 1 is the ACTUAL SOLUTION OF THE PROBLEM. We create a deep copy of the list only to print
+     *                the result and is NOT NECESSARY TO FOLLOW as a part of the problem.
+     *
+     * Time Complexity : O(N) ~ loop through all the nodes of the actual list , we are not going to say it is  O(2n) since deep copy
+     *                  of the final list is created only for printing the output and is NOT a part of the actual problem.
+     *
+     * Space Complexity : O(1) since we have 4 pointers that leftHead, left, rightHead and right.
+     *                    We do not consider `newList` since it is created for printing the output and
+     *                    is NOT A PART OF THE ACTUAL SOLUTION.
      **/
 
     public static void main(String[] args) {

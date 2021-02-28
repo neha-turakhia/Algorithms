@@ -10,6 +10,15 @@ import java.util.Scanner;
 /**
  * CTCI 2.1 Remove Dups : Write code to remove duplicates from an unsorted linked list.
  * FOLLOW UP How would you solve this problem if a temporary buffer is not allowed?
+ *
+ * Solution 1: Using a HashSet (temporary buffer)
+ *  Time Complexity ; O(N)
+ *  Space Complexity : O(N) for the hashset
+ *
+ *
+ *  Solution 2: Without using temporary buffer by using 2 for loops
+ *  Time Complexity - O(N^2) - since we have an inner loop that can have an upper bound of O(N-1) ~ O(N)
+ *  Space Complexity ~ O(1) since we use 2 pointers
  * */
 public class RemoveDups {
     public static void main(String[] args) {
@@ -46,10 +55,6 @@ public class RemoveDups {
 
 
         /**Solution 2 : Without using a temporary buffer **/
-        /**
-         * Time Complexity - O(n^2) - since we have an inner loop that can have an upper bound of O(n-1) ~ O(n)
-         * Space Complexity ~ O(1) since we use 2 pointers
-         * **/
         LinkedNode current = linkedList.getHead().getNext();
 
         while(current != null) {
