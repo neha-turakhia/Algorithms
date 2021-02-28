@@ -8,6 +8,16 @@ public class ZeroMatrix {
 
     /**
      * CTCI 1.8 Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+     *
+     * Solution : Let M be the no of rows , N be the no of columns.
+     *            Traverse the first row and column to check for zeros, then traverse the remaining matrix and upon encountering a 0
+     *            set the corresponding column and row in the first row and column to 0. Here the first row/column acts like flag which
+     *            determines if that corresponding row/column should be set to 0. Once done, set the corresponding row/column to 0 based
+     *            on the values set in the first row/column. And then set the first row/column to 0 based on the boolean value.
+     *
+     *  Time Complexity : 0(M+N+(M-1)(N-1)+M+N) ~ O(MN)
+     *  Space Complexity : O(1)
+     *
      * **/
     static int[][] matrix;
     public static void main(String[] args) {

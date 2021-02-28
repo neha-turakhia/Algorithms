@@ -8,6 +8,12 @@ public class StringRotation {
      * CTCI 1.9 - String rotation: Assume you have a method isSubstring which checks if one word is a substring of another.
      *                              Given two strings, write the code to check if one string is a rotation of the other using only one call to isSubstring
      *  Example : waterbottle is a rotation of erbottlewat
+     *
+     * Solution: Using a string builder append the string twice and then call isSubstring given based on the question
+     *           Since we dont know the implementation of isSubstring() - it is implemented using indexOf which runs in O(N)
+     *
+     * Time Complexity: O(2N) ~ O(N)
+     * Space Complexity: O(N)
      **/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

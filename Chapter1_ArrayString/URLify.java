@@ -12,6 +12,17 @@ public class URLify {
      *                 this operation in place.)
      *  Example Input: "Mr John Smith     ", 13
      *  Output: "Mr%20John%20Smith"
+     *
+     *
+     *  Solution: Since we are using java to solve this problem we shall do it inplace using a char array.
+     *            First we calculate the spaces that need to be replaced.
+     *            We start the traversal at the end of the array since the output may not be right
+     *            if we start traversing at the beginner of the array due to extra spaces.
+     *            We need to calculate the extra space required to replace ' ' with '%20' and
+     *            start filling up the array from that position replacing the characters all along to the beginning.
+     *
+     *  Time Complexity : O(N + N+C) ~ O(N) where C is the extra spaces
+     *  Space Complexity : O(1)
      **/
 
     public static void main(String[] args) {
@@ -35,11 +46,7 @@ public class URLify {
                 spaces++;
             }
         }
-        /**
-         * If we start at the end of the array then the output may not be right if there are extra spaces
-         * So we need to calculate the extra space required to replace ' ' with '%20' and
-         * start filling up the array from that position replacing the characters all along to the beginning
-         **/
+
         int k=trueLen+(spaces*2)-1; //this is the essence of the problem
         if(k > s.length) throw new InvalidObjectException("Invalid Input passed");
         for(int i=trueLen-1;i>=0;){
