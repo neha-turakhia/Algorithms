@@ -10,7 +10,15 @@ public class RotateMatrix {
      * CTCI 1.7 Rotate Image : Given an image represented by an NxN matrix,
      *                         where each pixel in the image is 4 bytes,
      *                         write a method to rotate the image by 90 degrees. Can you do this in place?
-     *  Added Followup : Do both clockwise & anit-clockwise rotation
+     *  Added Followup : Do both clockwise & anti-clockwise rotation
+     *
+     *  Solution : to rotate a matrix - do matrix transpose and swap the rows/columns based on which direction to rotate.
+     *              For clockwise - swap columns
+     *              For anti-clockwise - swap rows
+     *
+     *  Time Complexity : O(N/2+N/2) = O(N)
+     *  Space Complexity : O(1)
+     *
      * **/
 
 

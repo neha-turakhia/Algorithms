@@ -14,6 +14,10 @@ public class OneAway {
      *  pales, pale -> true
      *  pale, bale -> true
      *  pale, bake -> false
+     *
+     *  Solution : for same length strings check for one replace , and for strings with a difference of 1 char check for insert/delete
+     *  Time Complexity : O(N)
+     *  Space Complexity : O(1)
      **/
 
 
@@ -83,9 +87,3 @@ public class OneAway {
         return true;
     }
 }
-
-/*
-acd
-abcd
-
-*/

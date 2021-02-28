@@ -14,6 +14,12 @@ public class PalindromePermutation {
      *
      * EXAMPLE Input: Tact Coa
      * Output: True (permutations: "taco cat", "atco eta", etc.)
+     *
+     * Solution : Count the occurrences of each character. For a even length string every char in the palindrome occurs
+     *            twice. But for an odd length string , every char but 1 has even occurrence but one char has an odd occurrence.
+     *
+     * Time Complexity : O(N+size of hashmap) ~ O(N)
+     * Space Complexity : O(N) if all the characters are unique then the max size of the hashmap will be the size of the string
      **/
 
 

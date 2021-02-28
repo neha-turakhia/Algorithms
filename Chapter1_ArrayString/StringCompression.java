@@ -12,6 +12,10 @@ public class StringCompression {
      *                              You can assume the string has only uppercase and lowercase letters (a - z).
      *
      *  Example : Input = aabcccccaaa, Output = a2blc5a3
+     *
+     *  Solution : Use a string builder to perform concatenation - instead of string concat
+     *  Time Complexity : O(N)
+     *  Space Complexity : O(N) - for the output , if output is ignored O(1)
      **/
 
     public static void main(String[] args) {
