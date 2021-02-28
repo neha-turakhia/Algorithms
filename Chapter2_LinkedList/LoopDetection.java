@@ -15,6 +15,13 @@ public class LoopDetection {
  *
  * INPUT :  A - B - C - D - E - C
  * OUTPUT : C
+ *
+ * Solution : Solve using 2 pointer technique using fast and slow pointer. Break the loop when both are equal.
+ *            Reset the fast pointer to the head of the list and then move both pointers at the same speed by just 1 step.
+ *            Both the pointers me at the head of the loop , return this value.
+ *
+ * Time Complexity :  O(N)
+ * Space Complexity : O(1)
  **/
 
     public static void main(String[] args) {

@@ -8,6 +8,11 @@ import java.util.Scanner;
 
 /**
  * CTCI 2.2 Return kth to last : Implement an algorithm to find the kth to last element of a singly linked list.
+ *
+ * Solution : Solve using fast pointer - slow pointer techinique.
+ *
+ * Time Complexity : O(N)
+ * Space Complexity : O(1)
  **/
 
 public class KthToLast {
