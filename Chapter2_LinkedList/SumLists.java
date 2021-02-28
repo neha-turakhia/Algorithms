@@ -14,6 +14,21 @@ import java.util.Scanner;
  *
  *  FOLLOW UP :  What if digits are not stored in reverse order(i.e 1's digit is at tail)
  *  Example :  (6--1-->7) + (2-->9-->5) = (9-->1-->2)
+ *
+ * Solution for Reverse Order Sum: Calculate the sum on the fly using sum and carry by looping through the elements.
+ * Time Complexity: O(N1+N2) -where N1 is no of digits of number 1 and N2 is no of digits of number 2
+ * Space Complexity: O(N) - no of digits of the solution if we consider output , O(1) if output is not considered
+ *
+ *
+ * Solution1 for Forward order sum: reverse the digits of both the numbers and add them
+ * Time Complexity: O (N1+N2+N1+N2) ~ O(N1+N2)
+ * Space Complexity: O(N) -  no of digits of the solution if we consider output , O(1) if output is not considered
+ *
+ *
+ * Solution2 for Forward order sum: add the elements in the order and then correct the input from reverse.
+ *                                  Reverse the intermediate solution and add the carry for nodes with 2 digit values.
+ * Time Complexity :  O(N1+N2)
+ * Space Complexity: O (N) for the intermediate result
  **/
 public class SumLists {
     private static final int REVERSE_ORDER = 1;
