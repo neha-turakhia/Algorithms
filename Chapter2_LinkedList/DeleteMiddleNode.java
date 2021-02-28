@@ -8,7 +8,12 @@ import java.util.Scanner;
 
 /**
  * CTCI 2.3 Delete middle node: Implement an algorithm to delete a node in the middle of a singly linked list.
-            (i.e any node but the first and last node), given only access to that node.
+ * (i.e any node but the first and last node), given only access to that node.
+ *
+ * Solution : Set the middle node value to the value of the next node and delete the next node.
+ *
+ * Time Complexity : O(1)
+ * Space Complexity : O(1)
  **/
 
 public class DeleteMiddleNode {

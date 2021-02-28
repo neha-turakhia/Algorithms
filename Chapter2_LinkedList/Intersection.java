@@ -12,6 +12,23 @@ public class Intersection {
      *                         Note that intersection is based on reference, not value.
      *                         That is if the kth node of the first linked list is the exact same node (by reference) as the
      *                         jth node of the second linked list, then they are intersecting.
+     *
+     *  Solution 1: To find the intersection of 2 lists, do the following
+     *              (i) check if tail node of both the list are same , if not return null
+     *              (ii) compare the length of both the list, if unequal ,
+     *                   shift the current pointer of the longer node by diff(length of longer list-length of shorter list) steps
+     *              (iii) traverse both the lists together till both the current pointers are equal and return that pointer
+     *
+     *  Time Complexity : O(N1+N2+(N1-N2)+N1-(N1-N2) ~ O(N1+N2) [O(N) if both lists are of equal length]
+     *  Space Complexity : O(1)
+     *
+     *
+     *  Solution 2: we can avoid a cumbersome algorithm and make it much more simplified by traversing both the lists together ,
+     *              upon reaching the end of any one list, setting the current pointer to the head of the other list.
+     *              This traversal continues till both the current pointers point to the same node which is the intersection point.
+     *
+     *   Time Complexity : O(N1+N2) [O(N) if both lists are of equal length]
+     *   Space Complexity : O(1)
      **/
 
     public static void main(String[] args) {
