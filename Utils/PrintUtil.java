@@ -1,6 +1,9 @@
 package Utils;
 
 
+import java.util.Iterator;
+import java.util.Stack;
+
 public class PrintUtil {
     public static void printMatrix(int[][] mat) {
         System.out.println("----------------------------");
@@ -19,6 +22,16 @@ public class PrintUtil {
         while(current != null) {
             System.out.print(current.getData()+"-->");
             current = current.getNext();
+        }
+        System.out.println("NULL\n----------------------------");
+    }
+
+    public static void printStack(Stack stack) {
+        Iterator i = stack.iterator();
+        System.out.println("Stack from bottom to top");
+        System.out.println("----------------------------");
+        while(i.hasNext()){
+            System.out.println(i.next()+"-->");
         }
         System.out.println("NULL\n----------------------------");
     }
