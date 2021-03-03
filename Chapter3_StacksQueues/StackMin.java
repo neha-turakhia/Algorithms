@@ -64,9 +64,9 @@ class MinStack extends Stack<Integer>{
 
     @Override
     public synchronized Integer pop() {
-        int top =  super.pop();
-        if(top == minStack.peek()) {
-            return minStack.pop();
+        int top =  !super.empty() ? super.pop() : Integer.MIN_VALUE;
+        if(top !=  Integer.MIN_VALUE && !minStack.empty() && top == minStack.peek()) {
+             minStack.pop();
         }
         return top;
     }
