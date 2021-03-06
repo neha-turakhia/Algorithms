@@ -26,7 +26,7 @@ public class PrintUtil {
         System.out.println("NULL\n----------------------------");
     }
 
-    public static void printStack(Stack stack) {
+    public static void printJavaStack(Stack stack) {
         Iterator i = stack.iterator();
         System.out.println("Stack from bottom to top");
         System.out.println("----------------------------");
@@ -35,4 +35,17 @@ public class PrintUtil {
         }
         System.out.println("NULL\n----------------------------");
     }
+
+    public static void printLinkedStack(LinkedStack stack) {
+        System.out.println("Stack from top to bottom");
+        System.out.println("----------------------------");
+        LinkedNode node = stack.getTop();
+        while(node.getNext() != null) {
+            System.out.println(node.getNext().getData()+"-->");
+            node = node.getNext();
+        }
+        System.out.println("NULL\n----------------------------");
+    }
+
+
 }

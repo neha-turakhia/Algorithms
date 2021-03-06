@@ -43,7 +43,7 @@ public class StackMin {
                 case 4: System.out.println("Stack Min :"+stack.min());
                 break;
                 case 5:
-                    PrintUtil.printStack(stack);
+                    PrintUtil.printJavaStack(stack);
             }
             System.out.println("Enter an option to proceed");
         }while (option > 0 && option <6);
