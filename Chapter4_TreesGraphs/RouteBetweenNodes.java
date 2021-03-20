@@ -14,12 +14,12 @@ public class RouteBetweenNodes {
      *
      *
      * Solution 1: Implemented by using queues to implement a BFS
-     * Time Complexity :
-     * Space Complexity :
-     *
+     * Time Complexity : O(V) since we use the visited flag to add nodes into the queue
+     * Space Complexity : O(VE +V) ~ O(VE) for the adjacency matrix
+    *
      * Solution 2:  Implemented by using DFS with recursion
-     * Time Complexity :
-     * Space Complexity :
+     * Time Complexity : O(V) since we use the visited flag to recurse over the helper method
+     * Space Complexity :  O(VE +V) ~ O(VE) for the adjacency matrix
      * **/
 
     private static HashMap<Integer,HashSet<Integer>> adjMat = new HashMap<>();
