@@ -23,4 +23,20 @@ public class BinaryTree {
         }
     }
 
+    public static TreeNode constructTreeForLevelOrderArray(String[] treeInput) {
+        return helperLevelOrder(treeInput,0);
+    }
+
+    private static TreeNode helperLevelOrder(String[] arr,int index) {
+        if(index >= arr.length) return null;
+        if(arr[index].equals("null")) {
+            return null;
+        }
+        int data = Integer.parseInt(arr[index]);
+        TreeNode root = new TreeNode(data);
+        root.setLeft(helperLevelOrder(arr,2*index+1));
+        root.setRight(helperLevelOrder(arr,2*index+2));
+        return root;
+    }
+
 }
