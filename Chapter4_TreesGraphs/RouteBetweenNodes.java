@@ -67,17 +67,13 @@ public class RouteBetweenNodes {
         q.offer(vertexA);
 
         while(!q.isEmpty()) {
-
-            int size = q.size();
-            for(int i=0;i<size;++i){
-                int vertex = q.poll();
-                HashSet<Integer> neighbours = adjMat.get(vertex);
-                if(neighbours.contains(vertexB)) {
-                    return true;
-                }
-                for(Integer neighbour:neighbours) {
-                    q.offer(neighbour);
-                }
+            int vertex = q.poll();
+            HashSet<Integer> neighbours = adjMat.get(vertex);
+            if(neighbours.contains(vertexB)) {
+                return true;
+            }
+            for(Integer neighbour:neighbours) {
+                q.offer(neighbour);
             }
         }
         return false;
