@@ -23,10 +23,13 @@ public class RouteBetweenNodes {
      * **/
 
     private static HashMap<Integer,HashSet<Integer>> adjMat = new HashMap<>();
+    private static boolean [] visited;
+    private static int vertices;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the no of vertices, it is assumed the vertices are from 0 to n-1");
-        int vertices = scanner.nextInt();
+        vertices = scanner.nextInt();
+        visited = new boolean[vertices];
         initialize(vertices);
         System.out.println("Enter the no of edges");
         int edge_count = scanner.nextInt();
@@ -63,17 +66,21 @@ public class RouteBetweenNodes {
 
     private static boolean findRouteUsingBFS(int vertexA, int vertexB) {
         /*Solution 1: BFS using Queues*/
+        visited = new boolean[vertices];
         Queue<Integer> q = new LinkedList<>();
         q.offer(vertexA);
 
         while(!q.isEmpty()) {
             int vertex = q.poll();
+            visited[vertex]=true;
             HashSet<Integer> neighbours = adjMat.get(vertex);
             if(neighbours.contains(vertexB)) {
                 return true;
             }
             for(Integer neighbour:neighbours) {
-                q.offer(neighbour);
+                if(!visited[neighbour]) {
+                    q.offer(neighbour);
+                }
             }
         }
         return false;
@@ -81,20 +88,22 @@ public class RouteBetweenNodes {
 
     private static boolean findRouteUsingDFS(int vertexA, int vertexB) {
         /*Solution 2: DFS*/
+        visited = new boolean[vertices];
         return helper(vertexA,vertexB);
     }
 
     private static boolean helper(int verA,int verB) {
         HashSet<Integer> neighbours = adjMat.get(verA);
+        visited[verA]=true;
         if(neighbours.contains(verB)) return true;
         for(int neighbour:neighbours) {
-             boolean contains = helper(neighbour,verB);
-             if(contains) {
-                 return true;
-             }
+            if(!visited[neighbour]) {
+                boolean contains = helper(neighbour, verB);
+                if (contains) {
+                    return true;
+                }
+            }
         }
         return false;
     }
-
-
 }
