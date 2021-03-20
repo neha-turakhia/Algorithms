@@ -47,5 +47,12 @@ public class PrintUtil {
         System.out.println("NULL\n----------------------------");
     }
 
+    public static void printBinaryTree(TreeNode root) {
+        System.out.println("Printing the binary tree in preorder...");
+        System.out.println("----------------------------");
+        BinaryTree.printPreOrder(root);
+        System.out.println();
+        System.out.println("----------------------------");
+    }
 
 }
