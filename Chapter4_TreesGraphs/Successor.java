@@ -33,7 +33,7 @@ public class Successor {
         int nodeVal = scanner.nextInt();
         TreeNode node = BinaryTree.find(root,nodeVal);
 
-        TreeNode successor = findNextInorderSuccessor(node);
+        TreeNode successor = inorderSuccessorWithParentPtrs(node);
         if(successor != null){
             System.out.println(successor.getData());
         }else {
@@ -41,7 +41,7 @@ public class Successor {
         }
     }
 
-    private static TreeNode findNextInorderSuccessor(TreeNode node){
+    private static TreeNode inorderSuccessorWithParentPtrs(TreeNode node){
         TreeNode successor = null;
         if(node.getRight() != null) {
             successor = node.getRight();
@@ -60,5 +60,36 @@ public class Successor {
             successor = parent;
         }
         return successor;
+    }
+
+    public TreeNode inorderSuccessorWithoutParentPtrs(TreeNode root, TreeNode p) {
+        /*
+        * Solution - Finding the inorder successor without parent pointers
+        * */
+        TreeNode successor = null;
+        if(p.getRight() != null){
+            successor = p.getRight();
+            TreeNode cur = p.getRight();
+            while(cur.getLeft() != null) {
+                cur = cur.getLeft();
+            }
+            if(cur != null && cur != successor) {
+                successor = cur;
+            }
+        }else{
+            TreeNode prev = null;
+            TreeNode next = root;
+            while(next != p) {
+                if(next.getData() < p.getData()) {
+                    next = next.getRight();
+                }else {
+                    prev = next;
+                    next = next.getLeft();
+                }
+            }
+            successor = prev;
+        }
+        return successor;
+
     }
 }
