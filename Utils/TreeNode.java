@@ -4,6 +4,7 @@ public class TreeNode {
     int data;
     TreeNode left;
     TreeNode right;
+    TreeNode parent; //allowed or given in specific problems
 
     public TreeNode() {
         this.data = 0;
@@ -35,5 +36,13 @@ public class TreeNode {
 
     public void setRight(TreeNode right) {
         this.right = right;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
+    }
+
+    public TreeNode getParent() {
+        return parent;
     }
 }

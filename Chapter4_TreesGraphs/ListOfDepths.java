@@ -23,9 +23,8 @@ public class ListOfDepths {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the input as a comma separated string giving null for a null node and enter the input in LEVEL ORDER");
         String input = scanner.nextLine();
-        String[] treeInput = input.split(",");
 
-        TreeNode root = BinaryTree.constructTreeForLevelOrderArray(treeInput);
+        TreeNode root = BinaryTree.constructBinaryTree(input);
         System.out.println("BFS Solution");
         List<SinglyLinkedList> listOfDepths = getListForDepthBFS(root);
         for(SinglyLinkedList list : listOfDepths){
