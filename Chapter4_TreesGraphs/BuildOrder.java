@@ -22,7 +22,8 @@ public class BuildOrder {
      *            be built without any dependencies) to a queue, poll each one out and decrement the indegree of its dependents.
      *            Add the dependents to the queue only if their indegree also reaches 0. Process all the nodes in the same fashion.
      *
-     * Time Complexity : O(N) where N is the number of projects
+     * Time Complexity : O(N+D) where N is the number of projects and D is the number of dependencies ~
+     *                   O(V+E) for a graph where projects are represented as vertices and dependencies as edges
      * Space Complexity : O(N*D) where N is the number of projects and D is the number of dependencies ~
      *                   O(VE) for a graph where projects are represented as vertices and dependencies as edges
      *
